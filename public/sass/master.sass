@@ -1,0 +1,39 @@
+body::-webkit-scrollbar
+  display: none
+
+/* width */
+::-webkit-scrollbar
+  width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: var(--bulma-body-background-color)
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
+
+@for $i from 1 through 8
+
+  $val: $i * 0.25rem
+
+  @if $i == 1
+    .gap
+      gap: $val
+  @else
+    .gap-#{$i - 1}
+      gap: $val
+
+@for $i from 1 through 8
+
+  $val: $i * 1rem
+
+  .tt-indent-#{$i}
+    text-indent: $val
+
+  [data-indent='#{$i}']
+    text-indent: $val
